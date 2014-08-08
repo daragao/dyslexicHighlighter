@@ -1,27 +1,23 @@
 {
     "manifest_version": 2,
-        "name": "One-click Kittens",
-        "description": "This extension demonstrates a browser action with kittens.",
-        "version": "1.0",
+    "name": "One-click Kittens",
+    "description": "This extension demonstrates a browser action with kittens.",
+    "version": "1.0",
 
-        "permissions": [
-            "input",
-        "activeTab"
-            ],
-        "background": {
-            "scripts": ["popup.js"],
-            "persistent": false
-        },
-        "content_scripts": [
+    "permissions": [ "input", "activeTab" ],
+    "background": {
+        "scripts": ["src/js/background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
         {
-            "matches": ["<all_urls>"],
-            "js": ["jquery.min.js","underscore-min.js","scriptAux.js"],
-            "css": ["dyslexia.css"],
-            "run_at": "document_end"
-        }
-    ],
-        "browser_action": {
-            "default_icon": "icon.png",
-            "default_title": "Chrome Extension test"
-        }
+        "matches": ["<all_urls>"],
+        "js": ["libs/jquery.min.js","libs/underscore-min.js","src/js/scriptAux.js"],
+        "css": ["js/css/dyslexia.css"],
+        "run_at": "document_end"
+    }],
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_title": "Chrome Extension test"
+    }
 }
