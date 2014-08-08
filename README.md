@@ -1,0 +1,4 @@
+dyslexicHighlighter
+===================
+
+Extension for Chrome
