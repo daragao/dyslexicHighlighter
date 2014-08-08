@@ -13,7 +13,7 @@
         {
         "matches": ["<all_urls>"],
         "js": ["libs/jquery.min.js","libs/underscore-min.js","src/js/scriptAux.js"],
-        "css": ["js/css/dyslexia.css"],
+        "css": ["src/css/dyslexia.css"],
         "run_at": "document_end"
     }],
     "browser_action": {
