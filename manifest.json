@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "One-click Kittens",
-    "description": "This extension demonstrates a browser action with kittens.",
+    "name": "Dyslexia word highlighter",
+    "description": "This extension tries to help people to read better by higlighting the words.",
     "version": "1.0",
 
     "permissions": [ "input", "activeTab" ],
