@@ -150,6 +150,12 @@
         //sendResponse({farewell: "goodbye"});
     });
 
+    function setOptions() {
+        chrome.storage.sync.get(function (items) {
+            highlightLine = items.highlightLine;
+        });
+    }
+
     function toggleScript(scriptOn) {
         var $wordHighliterElem = $('#'+wordHighliterId);
         var keypressNamespace = "keydown."+extensionNamespace;
@@ -161,6 +167,7 @@
         }
         if(scriptOn) {
             console.log('script on!');
+            setOptions();
             $(document).bind(mousemoveNamespace,getMouseXY);
             $(document).bind(keypressNamespace, onKeypress);
             $wordHighliterElem.appendTo("body");
