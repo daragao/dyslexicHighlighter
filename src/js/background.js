@@ -9,7 +9,7 @@ var toggleScript = (function() {
                 tabs[0].id,
                 {isScriptOn: isScriptOn},
                 function(response) {
-                    console.log(response.farewell);
+                    //console.log(response.farewell);
                 });
         });
     };
