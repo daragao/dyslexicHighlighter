@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Dyslexia word highlighter",
     "description": "This extension tries to help people to read better by higlighting the words.",
-    "version": "0.1.1",
+    "version": "1.1",
 
     "permissions": [ "input", "activeTab", "storage" ],
     "background": {

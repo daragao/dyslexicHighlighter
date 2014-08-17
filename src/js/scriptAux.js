@@ -1,7 +1,6 @@
 'use strict';
 (function() {
     var extensionId = chrome.i18n.getMessage("@@extension_id");
-    var extensionNamespace = "dyslexia"+extensionId;
     var wordsClass = 'word'+extensionId;
     var wordHighliterId = 'wordHighlighter';
 
@@ -23,7 +22,7 @@
             var  elementMouseIsOver = document.elementFromPoint(tempX,tempY);
             var $elementMouseIsOver = $(elementMouseIsOver);
             var wordCoord = highlightWords($elementMouseIsOver);
-            var hasChanged = moveWordHighlighter(wordCoord);
+            var hasChanged = moveWordHighlighter($wordHighliterElem,wordCoord);
             if(hasChanged) {
                 //console.log($(elementMouseIsOver).text());
             }
@@ -37,8 +36,7 @@
         $newActiveElement.addClass(activeClassName);
     }
 
-    function moveWordHighlighter(wordCoord) {
-        var $wordHighliterElem = $('#'+wordHighliterId);
+    function moveWordHighlighter($wordHighliterElem,wordCoord) {
         if(!_.isEqual(wordCoord,$wordHighliterElem.data('wordCoord'))
            && wordCoord &&
            $.isPlainObject(wordCoord)) {
@@ -157,6 +155,7 @@
     }
 
     function toggleScript(scriptOn) {
+        var extensionNamespace = "dyslexia"+extensionId;
         var $wordHighliterElem = $('#'+wordHighliterId);
         var keypressNamespace = "keydown."+extensionNamespace;
         var mousemoveNamespace = "mousemove."+extensionNamespace;
